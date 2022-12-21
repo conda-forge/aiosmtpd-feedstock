@@ -1,5 +1,5 @@
 {% set name = "aiosmtpd" %}
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiosmtpd-{{ version }}.tar.gz
-  sha256: aa891d010d2097274189078c6ce2a59a167f3fb2e974e028b572a61e92e1549c  
+  sha256: c4928b527455304ebf4cbb141bfede06ec4d4c4695967ce7d2c4721c73cbf81c
 
 build:
   skip: true  # [py<36]
   entry_points:
     - aiosmtpd = aiosmtpd.main:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
 
 requirements:
   host:
