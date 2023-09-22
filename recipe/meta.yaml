@@ -14,7 +14,7 @@ build:
   entry_points:
     - aiosmtpd = aiosmtpd.main:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
