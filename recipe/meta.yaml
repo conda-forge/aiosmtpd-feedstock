@@ -10,7 +10,7 @@ source:
   sha256: 78d7b14f859ad0e6de252b47f9cf1ca6f1c82a8b0f10a9e39bec7e915a6aa5fe
 
 build:
-  skip: true  # [py<36]
+  noarch: python
   entry_points:
     - aiosmtpd = aiosmtpd.main:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,12 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.8
   run:
     - atpublic
     - attrs
-    - python
-    - typing-extensions  # [py<38]
+    - python >=3.8
 
 test:
   imports:
@@ -37,6 +36,7 @@ test:
 
 about:
   home: https://aiosmtpd.readthedocs.io/
+  dev_url: https://github.com/aio-libs/aiosmtpd
   summary: aiosmtpd - asyncio based SMTP server
   license: Apache-2.0
   license_file: LICENSE
