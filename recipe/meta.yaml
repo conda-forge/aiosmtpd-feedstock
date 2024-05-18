@@ -1,5 +1,5 @@
 {% set name = "aiosmtpd" %}
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiosmtpd-{{ version }}.tar.gz
-  sha256: 78d7b14f859ad0e6de252b47f9cf1ca6f1c82a8b0f10a9e39bec7e915a6aa5fe
+  sha256: 5a811826e1a5a06c25ebc3e6c4a704613eb9a1bcf6b78428fbe865f4f6c9a4b8
 
 build:
   noarch: python
