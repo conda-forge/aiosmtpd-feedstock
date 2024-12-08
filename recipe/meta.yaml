@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiosmtpd-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aiosmtpd-{{ version }}.tar.gz
   sha256: 5a811826e1a5a06c25ebc3e6c4a704613eb9a1bcf6b78428fbe865f4f6c9a4b8
 
 build:
@@ -14,16 +14,17 @@ build:
   entry_points:
     - aiosmtpd = aiosmtpd.main:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
   run:
     - atpublic
     - attrs
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -33,6 +34,7 @@ test:
     - aiosmtpd --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://aiosmtpd.readthedocs.io/
